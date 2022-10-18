@@ -1,6 +1,4 @@
-
-import {Button,Tabs,TabBar, Swiper, Image} from 'antd-mobile';
-
+import { Tabs, TabBar, Swiper, Image, AutoCenter} from 'antd-mobile';
 import './App.css';
 import{
   AppOutline,
@@ -8,24 +6,40 @@ import{
   UnorderedListOutline,
   UserOutline,
 }from 'antd-mobile-icons'
-
+import collapseMotion from 'antd/lib/_util/motion';
 function App() {
   return (
-    <div>
+    <div className='app'>
       <div className="title">鲸探</div>
-      <Button color='warning'>你好</Button>
-      <Button color='success'>百科</Button>
+      <Swiper class='Swiper-container' loop autoplay autoplayInterval= {2000} >
+        <Swiper.Item>欢迎加入鲸探</Swiper.Item>
+        <Swiper.Item>购买及转让须知</Swiper.Item>
+      </Swiper>
       <Tabs>
-        <Tabs.Tab title='数字藏品' key='Digital collections'></Tabs.Tab>
+        <Tabs.Tab title='数字藏品' key='Digital collections'>
+          <div className='collect-item'>
+            <img className='pic'src={require('./tupian/1.jpg')}></img> 
+          </div><div className='collect-item'>
+            <img className='pic'src={require('./tupian/2.jpg')}></img> 
+          </div>
+          <div className='collect-item'>
+            <img className='pic'src={require('./tupian/3.jpg')}></img> 
+          </div>
+          <div className='collect-item'>
+            <img className='pic'src={require('./tupian/4.jpg')}></img> 
+          </div>
+          <div className='collect-item'>
+            <img className='pic'src={require('./tupian/5.jpg')}></img> 
+          </div>
+          <div className='collect-item'>
+            <img className='pic'src={require('./tupian/6.jpg')}></img> 
+          </div>
+        </Tabs.Tab>
         <Tabs.Tab title='发售日期' key='Sale Date'></Tabs.Tab>
         <Tabs.Tab title='内容精选' key='Content Selection'></Tabs.Tab>
       </Tabs>
-      <Swiper class='Swiper-container'>
-        <Swiper.Item></Swiper.Item>
-        <Swiper.Item></Swiper.Item>
-
-      </Swiper>
-      <TabBar>
+      
+      <TabBar className='tabbar'>
         <TabBar.Item title='首页'  key='1' icon= {AppOutline}></TabBar.Item>
         <TabBar.Item title='发现'  key='2' icon= {UnorderedListOutline} badge='99'></TabBar.Item>
         <TabBar.Item title='藏品'  key='3' icon= {MessageFill} badge='5'></TabBar.Item>
