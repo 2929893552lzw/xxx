@@ -1,34 +1,44 @@
 .app
 {
+  background-color: black;
   padding-bottom: 49px;
   width: 100%;
+  padding-top: 10px;
 }
 .uu{
-  height: 70px;
+  height: 90px;
+  width: 100%;
 }
 .x{
-  height: 50px;
+  height: 90px;
   width:100%;
+  border-radius:10px;
 }
 .title{
   color: #1212f5;
   font-size:20px;
-  font-weight: 900;
-  font-family: "微软雅黑";
-  font-style: italic;
-  font: 100;
+  top: 0;
+  background-color: azure;
+  padding-top: 0%;
+  
 }
 .tabbar{
   position:fixed;
   bottom: 0;
   width: 100%;
-  background-color: aqua;
+  background-color: aliceblue;
+  
+  
 }
 .pic{
   width:100%;
-  height: 150px;
   object-fit: cover;
+  border-radius:50px;
+  background-color: rgb(12, 12, 12);
+  
   
 }
-
-  
+.tabs{
+  background-color: black;
+  color: rgb(251, 250, 249);
+}

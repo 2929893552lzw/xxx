@@ -1,97 +1,167 @@
-import { Tabs, TabBar, Swiper, Button } from 'antd-mobile';
+import { Tabs, TabBar, Swiper, Footer, Space, Tag, Avatar, List } from 'antd-mobile';
 import './App.css';
-import
-{
-  AppOutline,
-  MessageFill,
-  UnorderedListOutline,
-  UserOutline,
+import {
+AppOutline,
+MessageFill,
+UnorderedListOutline,
+UserOutline,
 } from 'antd-mobile-icons'
-import{
+import {
   useNavigate,
   Routes,
   Route,
-}from 'react-router-dom'
+  useLocation,
+} from 'react-router-dom'
+
 function App() {
   const navigate = useNavigate()
+  const { pathname } = useLocation()
+
   return (
     <div className='app'>
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/me' element={<Me />}></Route>
-        <Route path='2' element={<Mexx />}></Route>
-        <Route path='3' element={<Mexxx />}></Route>
+        <Route path='/2' element={<Mexx />}></Route>
+        <Route path='/3' element={<Mexxx />}></Route>
+        <Route path='/lbt' element={<Lbt1 />}></Route>
+        <Route path='/lbt2' element={<Lbt2 />}></Route>
       </Routes>
-      <TabBar className='tabbar' onChange={(key)=>{( navigate(key))}}>
-        <TabBar.Item title='首页'  key='/' icon= {AppOutline}></TabBar.Item>
-        <TabBar.Item title='发现'  key='2' icon= {UnorderedListOutline} badge='99'></TabBar.Item>
-        <TabBar.Item title='藏品'  key='3' icon= {MessageFill} badge='5'></TabBar.Item>
-        <TabBar.Item title='我的'  key='/me' icon= {UserOutline}></TabBar.Item>
+      <TabBar className='tabbar' activeKey={pathname} onChange={(key) => { (navigate(key)) }}>
+        <TabBar.Item title='首页' key='/' icon={AppOutline}></TabBar.Item>
+        <TabBar.Item title='发现' key='/2' icon={UnorderedListOutline} badge='99'></TabBar.Item>
+        <TabBar.Item title='藏品' key='/3' icon={MessageFill} badge='5'></TabBar.Item>
+        <TabBar.Item title='我的' key='/me' icon={UserOutline}></TabBar.Item>
       </TabBar>
     </div>
   );
 }
 function Home() {
+  const navigate = useNavigate()
+
   return (
     <>
-      <div className="title" onClick={() => {alert('欢迎来到鲸探')}}>鲸探</div>
-      <Swiper class='Swiper-container' loop autoplay autoplayInterval= {2000} >
-        <Swiper.Item className='uu'>
-          <div className='collect-item'>欢迎来到鲸探
-            <img className='x'src={require('./tupian/1.jpg')}></img> 
-          </div><div className='collect-item'></div>
-        </Swiper.Item>
-        <Swiper.Item className='uu'>购买及转让须知
+      <div className="title" onClick={() => { alert('欢迎来到鲸探') }}>鲸探</div>
+      <Swiper class='Swiper-container' loop autoplay autoplayInterval={2000} >
+        <Swiper.Item className='uu' onClick={() => { navigate('/lbt') }}>
           <div className='collect-item'>
-            <img className='x'src={require('./tupian/1.jpg')}></img> 
-          </div><div className='collect-item'></div>
+            <img className='x' src={require('./tupian/7.jpg')}></img>
+          </div>
+        </Swiper.Item>
+        <Swiper.Item className='uu' onClick={() => { navigate('/lbt2') }}>
+          <div className='collect-item'>
+            <img className='x' src={require('./tupian/8.jpg')}></img>
+          </div>
         </Swiper.Item>
       </Swiper>
-      <Tabs>
-        <Tabs.Tab title='数字藏品' key='Digital collections'>
-          <div className='collect-item'>
-            <img className='pic'src={require('./tupian/1.jpg')}></img> 
-          </div><div className='collect-item'>
-            <img className='pic'src={require('./tupian/2.jpg')}></img> 
+      <Tabs className='tabs'>
+        <Tabs.Tab title='数字藏品' key='Digital collections' onClick={() => { navigate('/lbt2') }}>
+          <div>
+            <img className='pic' src={require('./tupian/9.jpg')}></img>
+            <div>二十四诗品印象</div>
+            <Tag color='default'>限量</Tag>
+            <Tag color='primary'>10000份</Tag>
+            <div>
+             <Space block direction='vertical'></Space>
+             <List>
+              <List.Item>
+                <Avatar src='' ></Avatar>
+              </List.Item>
+             </List>
+            </div>
+            <Space />
           </div>
-          <div className='collect-item'>
-            <img className='pic'src={require('./tupian/3.jpg')}></img> 
+          <div>
+            <img className='pic' src={require('./tupian/10.jpg')}></img>
+            <div>二十四诗品印象</div>
+            <Tag color='default'>限量</Tag>
+            <Tag color='primary'>10000份</Tag>
+            <div>中国美术学院国潮艺术研究院</div>
+            <Space />
           </div>
-          <div className='collect-item'>
-            <img className='pic'src={require('./tupian/4.jpg')}></img> 
+          <div>
+            <img className='pic' src={require('./tupian/11.jpg')}></img>
+            <div>二十四诗品印象</div>
+            <Tag color='default'>限量</Tag>
+            <Tag color='primary'>10000份</Tag>
+            <div>中国美术学院国潮艺术研究院</div>
+            <Space />
           </div>
-          <div className='collect-item'>
-            <img className='pic'src={require('./tupian/5.jpg')}></img> 
+          <div>
+            <img className='pic' src={require('./tupian/12.jpg')}></img>
+            <div>二十四诗品印象</div>
+            <Tag color='default'>限量</Tag>
+            <Tag color='primary'>10000份</Tag>
+            <div>中国美术学院国潮艺术研究院</div>
+            <Space />
           </div>
-          <div className='collect-item'>
-            <img className='pic'src={require('./tupian/6.jpg')}></img> 
-          </div>
+          <div>
+            <img className='pic' src={require('./tupian/14.jpg')}></img>
+            <div>二十四诗品印象</div>
+            <Tag color='default'>限量</Tag>
+            <Tag color='primary'>10000份</Tag>
+            <div>中国美术学院国潮艺术研究院</div>
+            
+            <Space /> 
+            
+          </div> 
+          <Footer className='tabs' label='没有更多了'></Footer>
         </Tabs.Tab>
-        <Tabs.Tab title='发售日期' key='Sale Date'></Tabs.Tab>
-        <Tabs.Tab title='内容精选' key='Content Selection'>当前内容需要分成同层级结构的组，进行内容切换展示，常用在表单或者列表的顶部。   </Tabs.Tab>
+        <Tabs.Tab title='发售日期' key='Sale Date'>
+        <Footer className='tabs' label='更多内容敬请期待'></Footer>
+        </Tabs.Tab>
+        <Tabs.Tab title='内容精选' key='Content Selection'>当前内容需要分成同层级结构的组，进行内容切换展示，常用在表单或者列表的顶部。
+        <Footer className='tabs' label='更多内容敬请期待'></Footer>
+        </Tabs.Tab>
       </Tabs>
+      
     </>
   )
 }
 function Me() {
   return (
     <>
-      <div>A</div>
+      <div>
+        <Space>
+          <button>111</button>
+          <button>111</button>
+        </Space>
+        <Footer className='tabs' label='提供技术支持'></Footer>
+      </div>
     </>
   )
 }
 function Mexx() {
   return (
     <>
-      <div>sjbgbyrbyr</div>
+      <Tabs>
+        <Tabs.Tab className='tabs' title= '推荐' key='tj'></Tabs.Tab>
+        <Tabs.Tab className='tabs' title= '关注' key='gz'></Tabs.Tab>
+      </Tabs>
     </>
   )
 }
 function Mexxx() {
   return (
     <>
+      <div className='title'>创建展馆</div>
+      <img className='pic' src={require('./tupian/12.jpg')}></img>
+    </>
+  )
+}
+function Lbt1() {
+  return (
+    <>
       <div>你好</div>
-      <img className='pic'src={require('./tupian/2.jpg')}></img>
+
+    </>
+  )
+}
+function Lbt2() {
+  return (
+    <>
+      <div>88888888</div>
+
     </>
   )
 }
