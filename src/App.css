@@ -1,44 +1,100 @@
-.app
-{
-  background-color: black;
-  padding-bottom: 49px;
-  width: 100%;
-  padding-top: 10px;
-}
-.uu{
-  height: 90px;
+.app {
   width: 100%;
 }
-.x{
-  height: 90px;
-  width:100%;
-  border-radius:10px;
+
+.uu {
+  height: 120px;
+  width: 100%;
 }
-.title{
-  color: #1212f5;
-  font-size:20px;
+
+.x {
+  height: 120px;
+  width: 100%;
+  border-radius: 20px;
+
+}
+
+.title {
+  font-size: 30px;
+  position: fixed;
+  width: 100%;
+  color: aliceblue;
   top: 0;
-  background-color: azure;
-  padding-top: 0%;
-  
+  left: 0;
+  right: 0;
+  background-color: red;
 }
-.tabbar{
-  position:fixed;
-  bottom: 0;
+
+.tabbar {
+  position: fixed;
   width: 100%;
   background-color: aliceblue;
-  
-  
+  bottom: 0;
+
 }
-.pic{
-  width:100%;
+
+.pic {
+  width: 100%;
   object-fit: cover;
-  border-radius:50px;
-  background-color: rgb(12, 12, 12);
-  
+  border-radius: 20px;
+ 
+}
+
+.tabs {
+  background-color: rgb(147, 132, 132);
+  color: rgb(251, 250, 249);
   
 }
-.tabs{
-  background-color: black;
-  color: rgb(251, 250, 249);
+
+.home {
+  padding-top: 20px;
+  width: 100%;
+  padding-bottom: 49px;
+  background-image: url(./tupian/15.jpg);
+}
+
+.tx {
+  height: 16.8px;
+  width: 16.8px;
+}
+
+.tpbj {
+  background-image: url(./tupian/15.jpg);
+  border-radius: 20px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.tx1 {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+.tx2{
+ 
+  padding-right: 10px; font-size:20px ;
+}
+.me1
+{
+  color: aliceblue;
+  --adm-color-background: black;
+}
+.wdcp{
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index:-1
+}
+.ps
+{
+  margin-top: 375px;
+  width: 100%;
+  background-color: aliceblue;
+}
+.pc{
+  width: 100%;
+  object-fit: cover;
+
 }
